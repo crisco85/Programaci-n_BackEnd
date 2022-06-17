@@ -56,6 +56,8 @@ console.log(Cristian.getFullName());
 console.log(Cristian.countMascotas());
 console.log(Cristian.getBookNames());
 
+console.log('********************************');
+
 console.log(Franco.getFullName());
 console.log(Franco.countMascotas());
 console.log(Franco.getBookNames());
