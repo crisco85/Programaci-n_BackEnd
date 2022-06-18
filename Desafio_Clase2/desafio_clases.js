@@ -37,10 +37,10 @@ class Usuario{
     }
 
     addBook(pNombreLibro, pAutor){
-        this.libros = [{
+        this.libros.push({
             nombre : pNombreLibro,
             autor : pAutor,
-        }]
+        })
     }
 
     getBookNames(){
