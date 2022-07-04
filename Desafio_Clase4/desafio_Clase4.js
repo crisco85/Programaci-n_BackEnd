@@ -1,26 +1,50 @@
 //primero importamos fila system
 const fs = require('fs');
+//import {existsSync} from 'fs';
+//import * as fs from 'fs';
 
 let mObjetoProducto = {};
 let mProductoArray = [];
-
+//let mFileExists = ("productos.txt");
 
 class Contenedor{
     constructor(pNombreDeArchivo){
         this.nombreDelArchivo = "./" + pNombreDeArchivo;
-    }
+        //this.mProductoArray;
+    } 
 
    async save(mProducto){
         try
-        {
-            mObjetoProducto = mProducto;
+        {   
 
+                let mFileExists = fs.existsSync(this.nombreDelArchivo);
+                //mProductoArray = JSON.parse(fs.readFile(this.nombreDelArchivo, 'utf-8'))
 
-            mObjetoProducto.id = mProductoArray.length + 1;
-         
+                if(mFileExists){
+
+                    mProductoArray = JSON.parse(await fs.promises.readFile(this.nombreDelArchivo, 'utf-8'));
+
+                    mObjetoProducto = mProducto;         
             
-            mProductoArray.push(mObjetoProducto);
-            await fs.promises.writeFile(this.nombreDelArchivo, JSON.stringify(mProductoArray, null, 2));
+                    mObjetoProducto.id = mProductoArray.length + 1;
+
+                    mProductoArray.push(mObjetoProducto);
+           
+                    await fs.promises.writeFile(this.nombreDelArchivo, JSON.stringify(mProductoArray, null, 2));
+                    
+
+                }else{
+
+                    mObjetoProducto = mProducto;         
+            
+                    mObjetoProducto.id = mProductoArray.length + 1;
+
+                    mProductoArray.push(mObjetoProducto);
+           
+                    await fs.promises.writeFile(this.nombreDelArchivo, JSON.stringify(mProductoArray, null, 2));
+                }
+            
+   
         } 
         catch (error)
         {
@@ -77,7 +101,7 @@ class Contenedor{
         try
         {
             mProductoArray = [];
-            await fs.promises.writeFile(this.nombreDelArchivo, JSON.stringify(mProductoArray, null, 2));
+            await fs.promises.unlink(this.nombreDelArchivo, JSON.stringify(mProductoArray, null, 2));
         }
         catch (error)
         {
@@ -90,9 +114,11 @@ class Contenedor{
 
 }
 
+//console.log(mProductoArray.length)
+
 const mProductos = new Contenedor("productos.txt");
 
-//****Probando el método save */
+/****Probando el método save */
 
 // mProductos.save({
 //     title: "Procesador",
@@ -132,5 +158,5 @@ const mProductos = new Contenedor("productos.txt");
 
 
 
-//****Probando el método deleteAll */
-//mProductos.deleteAll();
+// /****Probando el método deleteAll */
+// mProductos.deleteAll();
