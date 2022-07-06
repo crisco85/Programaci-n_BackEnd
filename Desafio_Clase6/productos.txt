@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Procesador",
+    "price": 55000,
+    "thumbail": "https://www.amd.com/es/products/cpu/amd-ryzen-7-1800x",
+    "id": 1
+  },
+  {
+    "title": "Monitor",
+    "price": 23500,
+    "thumbail": "https://www.pngfind.com/mpng/mobhJ_monitor-definicion-de-monitor-de-computadora-hd-png/",
+    "id": 2
+  },
+  {
+    "title": "Teclado",
+    "price": 10000,
+    "thumbail": "http://pngimg.es/download/101874",
+    "id": 3
+  }
+]
