@@ -83,7 +83,8 @@ class Contenedor{
         try
         {
             mProductoArray = JSON.parse(await fs.promises.readFile(this.nombreDelArchivo, 'utf-8'));
-            console.log(mProductoArray);
+            //console.log(mProductoArray);
+            return mProductoArray;
         }
         catch (error)
         {
@@ -134,7 +135,8 @@ const random = (max) => {
 
  //pPeticion = res, pRespuesta = req
  app.get('/productos', async (req, res) => {
-   res.json(await mContenedor.getAll())
+    let mDatos = await mContenedor.getAll();
+    res.json(mDatos);
  })
  
  app.get('/productoRandom', async (req, res) => {
