@@ -1,0 +1,28 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+
+body {
+    background-color: rgb(229, 233, 245);
+  }
+
+.form {
+    background-color: rgb(100, 168, 168);
+    border-style: solid;
+    padding: 55px;
+    border-color: black;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+.container {
+    display: grid;
+    grid-template-columns: 2fr;
+    grid-gap: 2rem;
+  }

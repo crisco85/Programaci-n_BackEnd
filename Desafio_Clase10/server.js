@@ -11,8 +11,6 @@ const mServer = app.listen(port, () => {
     console.log(`Servidor Http escuchando en el puerto ${mServer.address().port}`);
 })
 
-mServer.on("error", error => console.log(`Error en servidor ${error}`))
-
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 app.use('/static', express.static(__dirname + '/public'))
@@ -24,8 +22,6 @@ const mProductArray = [
 ]
 
 const mContenedor = new Contenedor(mProductArray);
-
-
 
 router.get('', (req, res) => {
     const mData =  mContenedor.getAll();   
@@ -55,3 +51,6 @@ router.delete('/:id', (req, res) => {
     const mData = products.deleteById(mId)
     return res.json({mData})
 })
+
+
+mServer.on("error", error => console.log(`Error en servidor ${error}`))
