@@ -1,0 +1,25 @@
+extends main.pug
+block content
+    .modal-dialog
+        .modal-content
+            // Modal Header
+            .modal-header
+                
+            .modal-body
+                table(style='width:70%', class="table table-hover")
+                    if mData.length != 0
+                        tr
+                            th Id
+                            th Producto
+                            th Precio
+                            th Icono
+                        each product in mData
+                            tr
+                                td= product.id
+                                td= product.title
+                                td= product.price
+                                td
+                                    img(src=product.thumbnail, alt="product image", width="50", height="50")
+                    else
+                        p='No hay productos'
+                        a(class='btn btn-primary', href='http://localhost:8080/api/productos') Cargar Productos

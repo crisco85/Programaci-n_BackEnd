@@ -1,0 +1,22 @@
+extends main.pug
+block content
+    .modal-dialog
+        if status == 0
+            div(class="alert alert-warning", role="alert") Por favor, complete todos los datos!!!
+        .modal-content
+          // Modal Header
+          .modal-header
+            
+          // Modal Body
+          .modal-body
+            form(role='form' method='POST' action='http://localhost:8080/api/productos/')
+                div.form-group
+                    label(for='name') Producto:
+                    input#title.form-control(type='text', placeholder='Producto' name='title')
+                div.form-group
+                    label(for='price') Precio:
+                    input#price.form-control(type='text', placeholder='Precio' name='price')
+                div.form-group
+                    label(for='thumbnail') Thumbnail:
+                    input#thumbnail.form-control(type='text', placeholder='URL Imagen' name='thumbnail')
+                button.btn.btn-primary(type="submit") Cargar Producto

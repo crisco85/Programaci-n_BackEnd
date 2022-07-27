@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+    
+    <% if (mData.length > 0) { %>      
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Producto</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Icono</th>
+            </tr>
+            </thead>
+            <tbody>
+            <% mData.forEach(product => { %>
+                <tr>
+                    <th scope="row"><%= product.id %></th>
+                    <td><%= product.title %></td>
+                    <td><%= product.price %></td>
+                    <td><img src=<%= product.thumbnail %> alt="product image" width="50" height="50"></td>
+                </tr>
+
+            <% }) %>
+            </tbody>
+        </table>
+    <% } else {%>
+        <div class="alert alert-warning" role="alert">
+            Data NOT FOUND
+        </div>    
+    <% } %>
+</body>
+</html>
