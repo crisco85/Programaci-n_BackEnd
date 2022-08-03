@@ -1,0 +1,1 @@
+[{"title": "Procesador", "price": "55000", "thumbnail":"https://cdn2.iconfinder.com/data/icons/80-s-stuffs-outline/59/Asset_3-128.png", "id": 1}, {"title": "Monitor", "price": "23500", "thumbnail":"https://cdn2.iconfinder.com/data/icons/80-s-stuffs-outline/62/Asset_14-512.png", "id": 2}]

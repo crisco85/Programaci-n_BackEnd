@@ -1,0 +1,30 @@
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <img src="https://jobs.coderhouse.com/assets/logos_coderhouse.png" alt="logo" height="50">
+            <% if(status==0) { %>
+                <div class="alert alert-warning" role="alert">
+                    Complete todos los campos
+                </div>
+                <% } %>
+        </div>
+        <div class="modal-body">
+            <form role='form'>
+                <!-- method='POST' action='http://localhost:8080/api/productos/' -->
+                <div class="form-group">
+                    <label for="title">Producto</label>
+                    <input type="text" class="form-control" id="title" placeholder="Producto" name="title">
+                </div>
+                <div class="form-group">
+                    <label for="price">Precio</label>
+                    <input type="text" class="form-control" id="price" placeholder="Precio" name="price">
+                </div>
+                <div class="form-group">
+                    <label for="thumbnail">Icono</label>
+                    <input type="text" class="form-control" id="thumbnail" placeholder="URL" name="thumbnail">
+                </div>
+                <button type="text" class="btn btn-primary" id="submitProduct">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
