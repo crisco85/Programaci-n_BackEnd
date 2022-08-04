@@ -60,6 +60,7 @@ io.on('connection', socket => {
         const messageCont = newMessage;
         socket.emit('refreshMessages', messageCont);
         socket.broadcast.emit('refreshMessages', messageCont);
+        //io.sockets.emit('refreshMessages', messageCont);
     });
 
     socket.on('disconnect', reason => {
