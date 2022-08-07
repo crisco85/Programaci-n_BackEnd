@@ -134,7 +134,7 @@ class Contenedor {
             })
 
             .then(() => {
-                return {message: `Se ha eliminado el objeto con id ${general_id}`};
+                return {message: `Se ha eliminado el objeto con id ${prod_id}`};
             })
 
             .catch(error => {

@@ -100,8 +100,12 @@ cartRouter.post('', async (req, res) => {
 // Vacía un carrito y lo elimina
 cartRouter.delete('/:id', async (req, res) => {
     if(administrador){
-        const answer = await carts.deleteById('BDDcart.txt', Number(req.params.id), null);
-        return res.status(201).json(answer);
+        try {
+            const answer = await carts.deleteById('BDDcart.txt', Number(req.params.id), null);
+            return res.status(201).json(answer);
+        } catch(error) {
+            return res.status(500).json(error.message);
+        } 
     } else {
         return res.status(401).json({url: req.originalUrl, method: req.method, status: 401, error: 'Unauthorized', message:`Ruta '${req.originalUrl}', metodo '${req.method}' no autorizada para el usuario.`});
     }
@@ -113,9 +117,12 @@ cartRouter.get('/:id/productos', async (req, res) => {
         if(!req.params.id){
             return res.status(500).json(`No existe el id ${req.params.id}`);
         }
-        
-        const data3 = await carts.getAll('BDDcart.txt', Number(req.params.id));
-        return res.status(200).json(data3);
+        try{
+            const data3 = await carts.getAll('BDDcart.txt', Number(req.params.id));
+            return res.status(200).json(data3);
+        } catch (error) {
+            return res.status(500).json(error.message);
+        }
  
     } else {
         return res.status(401).json({url: req.originalUrl, method: req.method, status: 401, error: 'Unauthorized', message:`Ruta '${req.originalUrl}', metodo '${req.method}' no autorizada para el usuario.`});
@@ -136,9 +143,12 @@ cartRouter.post('/:id/productos', async (req, res) => {
 // Eliminar un producto del carrito por su id de carrito y de producto
 cartRouter.delete('/:id/productos/:id_prod', async (req, res) => {
     if(administrador){
-        const answer = await carts.deleteById('BDDcart.txt', Number(req.params.id), Number(req.params.id_prod));
-        return res.status(201).json(answer);
-
+        try {
+            const answer = await carts.deleteById('BDDcart.txt', Number(req.params.id), Number(req.params.id_prod));
+            return res.status(201).json(answer);
+        } catch(error) {
+            return res.status(500).json(error.message);
+        } 
     } else {
         return res.status(401).json({url: req.originalUrl, method: req.method, status: 401, error: 'Unauthorized', message:`Ruta '${req.originalUrl}', metodo '${req.method}' no autorizada para el usuario.`});
     }
