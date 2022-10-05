@@ -13,9 +13,6 @@ const httpServer = new HttpServer(app);
 const io = new IOServer(httpServer);
 const PORT = 8080;
 
-
-const session = require('express-session');
-
 const passport = require('passport');
 const { Strategy: LocalStrategy } = require('passport-local');
 const { createHash, isValidPassword } = require('./utils/bycrypt');
