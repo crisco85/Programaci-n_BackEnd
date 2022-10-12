@@ -1,0 +1,59 @@
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <img src="https://cdn2.iconfinder.com/data/icons/random-set-1/467/Asset_79-128.png" alt="icono-mensaje" height="50">
+            <h2 style="text-align:left" >Mensajes</h2>
+        </div>
+        <div class="modal-body">
+            <div>
+                <label for="title">Ingrese sus Datos</label>
+                <input type="text" class="form-control" id="nameInput" placeholder="Nombre" name="nombre">
+                <br>
+                <input type="text" class="form-control" id="surnameInput" placeholder="Apellido" name="apellido">
+                <br>
+                <input type="text" class="form-control" id="aliasInput" placeholder="Alias" name="alias">
+                <br>
+                <input type="number" class="form-control" id="ageInput" placeholder="Edad (en años)" name="edad">
+                <br>
+                <input type="email" class="form-control" id="emailInput" placeholder="nombre@email.com" name="email">
+                <br>
+
+            </div>
+            <div>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">Avatar</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Mensaje</th>
+                        </tr>
+                    </thead>
+                    <tbody id="messageTableBody">
+                        <% messageCont.forEach(message => { %>
+                            <div>
+                                <tr>
+                                    <th scope="row" style="color:blue">
+                                        <img src="<%= message.author.avatar %>" alt="avatar">
+                                    </th>
+                                    <td>
+                                        <%= message.author.nombre %> <%= message.author.apellido %>
+                                    </td>
+                                    <td>
+                                        <%= message.text %>
+                                    </td>
+                                </tr>
+                            </div>
+                            <% }) %>
+                    </tbody>
+                </table>
+            </div>
+            <div>
+                <label for="title">Ingrese su mensaje</label>
+                <input type="text" class="form-control" id="messageInput" placeholder="Escribir..." name="message">
+                <br>
+                <button type="text" class="btn btn-primary" id="submitMessage">Submit</button>
+            </div>
+
+        </div>
+    </div>
+</div>

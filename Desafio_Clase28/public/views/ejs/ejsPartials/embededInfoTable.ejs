@@ -1,0 +1,34 @@
+<div class="modal-dialog">
+    <div class="modal-content">
+
+        <div class="modal-header">
+            <img src="https://cdn0.iconfinder.com/data/icons/small-n-flat/24/678110-sign-info-128.png" alt="logo" height="50">
+            <h2>Process Info</h2>
+        </div>
+        <div class="modal-body">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">Param Name</th>
+                        <th scope="col" >Value</th>
+                    </tr>
+                </thead>
+                <tbody id="productsTableBody">
+                    <% processInfo.forEach(param => { %>
+                        <!-- <div> -->
+                            <tr>
+                                <td>
+                                    <%= param.name %>
+                                </td>
+                                <td style="max-width: 200px; overflow-x:auto">
+                                    <%= param.value %>
+                                </td>
+=                            </tr>
+                        <!-- </div> -->
+                    <% }) %>
+                </tbody>
+            </table>
+           
+        </div>
+    </div>
+</div>
