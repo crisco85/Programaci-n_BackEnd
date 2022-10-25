@@ -1,0 +1,64 @@
+crist@DESKTOP-ALNJ555 MINGW64 /f/Document/Cristian - Documents/CoderHouse/Programación BackEnd/Desafios/Desafio_Clase30 (Desafio_Clase30)
+$ pm2 start server.js --name="Server1" --watch -- 8081
+[PM2] Spawning PM2 daemon with pm2_home=C:\Users\crist\.pm2
+[PM2] PM2 Successfully daemonized
+[PM2] Starting F:\Document\Cristian - Documents\CoderHouse\Programación BackEnd\Desafios\Desafio_Clase30\server.js in fork_mode (1 instance)
+[PM2] Done.
+┌────┬────────────────────┬──────────┬──────┬───────────┬──────────┬──────────┐
+│ id │ name               │ mode     │ ↺    │ status    │ cpu      │ memory   │
+├────┼────────────────────┼──────────┼──────┼───────────┼──────────┼──────────┤
+│ 0  │ Server1            │ fork     │ 0    │ online    │ 0%       │ 37.8mb   │
+└────┴────────────────────┴──────────┴──────┴───────────┴──────────┴──────────┘
+
+crist@DESKTOP-ALNJ555 MINGW64 /f/Document/Cristian - Documents/CoderHouse/Programación BackEnd/Desafios/Desafio_Clase30 (Desafio_Clase30)
+$ pm2 start server.js --name="Server2" --watch -i 4 -- 8082
+[PM2] Starting F:\Document\Cristian - Documents\CoderHouse\Programación BackEnd\Desafios\Desafio_Clase30\server.js in cluster_mode (4 instances)
+[PM2] Done.
+┌────┬────────────────────┬──────────┬──────┬───────────┬──────────┬──────────┐
+│ id │ name               │ mode     │ ↺    │ status    │ cpu      │ memory   │
+├────┼────────────────────┼──────────┼──────┼───────────┼──────────┼──────────┤
+│ 0  │ Server1            │ fork     │ 0    │ online    │ 0%       │ 56.9mb   │
+│ 1  │ Server2            │ cluster  │ 0    │ online    │ 56.2%    │ 55.9mb   │
+│ 2  │ Server2            │ cluster  │ 0    │ online    │ 60.9%    │ 47.3mb   │
+│ 3  │ Server2            │ cluster  │ 0    │ online    │ 46.9%    │ 43.7mb   │
+│ 4  │ Server2            │ cluster  │ 0    │ online    │ 40.6%    │ 36.2mb   │
+└────┴────────────────────┴──────────┴──────┴───────────┴──────────┴──────────┘
+
+crist@DESKTOP-ALNJ555 MINGW64 /f/Document/Cristian - Documents/CoderHouse/Programación BackEnd/Desafios/Desafio_Clase30 (Desafio_Clase30)
+$ pm2 list
+┌────┬────────────────────┬──────────┬──────┬───────────┬──────────┬──────────┐
+│ id │ name               │ mode     │ ↺    │ status    │ cpu      │ memory   │
+├────┼────────────────────┼──────────┼──────┼───────────┼──────────┼──────────┤
+│ 0  │ Server1            │ fork     │ 0    │ online    │ 0%       │ 56.7mb   │
+│ 1  │ Server2            │ cluster  │ 0    │ online    │ 0%       │ 86.8mb   │
+│ 2  │ Server2            │ cluster  │ 0    │ online    │ 0%       │ 87.1mb   │
+│ 3  │ Server2            │ cluster  │ 0    │ online    │ 0%       │ 56.8mb   │
+│ 4  │ Server2            │ cluster  │ 0    │ online    │ 0%       │ 57.1mb   │
+└────┴────────────────────┴──────────┴──────┴───────────┴──────────┴──────────┘
+
+crist@DESKTOP-ALNJ555 MINGW64 /f/Document/Cristian - Documents/CoderHouse/Programación BackEnd/Desafios/Desafio_Clase30 (Desafio_Clase30)
+$ pm2 delete Server1
+[PM2] Applying action deleteProcessId on app [Server1](ids: [ 0 ])
+[PM2] [Server1](0) ✓
+┌────┬────────────────────┬──────────┬──────┬───────────┬──────────┬──────────┐
+│ id │ name               │ mode     │ ↺    │ status    │ cpu      │ memory   │
+├────┼────────────────────┼──────────┼──────┼───────────┼──────────┼──────────┤
+│ 1  │ Server2            │ cluster  │ 0    │ online    │ 0%       │ 57.4mb   │
+│ 2  │ Server2            │ cluster  │ 0    │ online    │ 0%       │ 57.6mb   │
+│ 3  │ Server2            │ cluster  │ 0    │ online    │ 0%       │ 57.7mb   │
+│ 4  │ Server2            │ cluster  │ 0    │ online    │ 0%       │ 58.0mb   │
+└────┴────────────────────┴──────────┴──────┴───────────┴──────────┴──────────┘
+
+crist@DESKTOP-ALNJ555 MINGW64 /f/Document/Cristian - Documents/CoderHouse/Programación BackEnd/Desafios/Desafio_Clase30 (Desafio_Clase30)
+$ pm2 delete Server2
+[PM2] Applying action deleteProcessId on app [Server2](ids: [ 1, 2, 3, 4 ])
+[PM2] [Server2](1) ✓
+[PM2] [Server2](2) ✓
+[PM2] [Server2](3) ✓
+[PM2] [Server2](4) ✓
+┌────┬────────────────────┬──────────┬──────┬───────────┬──────────┬──────────┐
+│ id │ name               │ mode     │ ↺    │ status    │ cpu      │ memory   │   
+└────┴────────────────────┴──────────┴──────┴───────────┴──────────┴──────────┘   
+
+crist@DESKTOP-ALNJ555 MINGW64 /f/Document/Cristian - Documents/CoderHouse/Programación BackEnd/Desafios/Desafio_Clase30 (Desafio_Clase30)
+$

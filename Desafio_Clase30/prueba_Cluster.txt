@@ -1,0 +1,36 @@
+$ node server.js -p 8082 -b CLUSTER
+Nodo MASTER 2544 corriendo
+[PRODUCTO] Conectado a MongoDB
+[MENSAJE] Conectado a MongoDB
+Servidor ejecutando en la direccion 8082 y utilizando el balanceador de carga CLUSTER. Id de proceso: 13620
+WORKER 13620 is listening in port 8082
+Servidor ejecutando en la direccion 8082 y utilizando el balanceador de carga CLUSTER. Id de proceso: 10464
+Servidor ejecutando en la direccion 8082 y utilizando el balanceador de carga CLUSTER. Id de proceso: 2052
+Servidor ejecutando en la direccion 8082 y utilizando el balanceador de carga CLUSTER. Id de proceso: 2440
+WORKER 10464 is listening in port 8082
+WORKER 2052 is listening in port 8082
+WORKER 2440 is listening in port 8082
+Servidor ejecutando en la direccion 8082 y utilizando el balanceador de carga CLUSTER. Id de proceso: 3404
+Servidor ejecutando en la direccion 8082 y utilizando el balanceador de carga CLUSTER. Id de proceso: 4600
+WORKER 3404 is listening in port 8082
+WORKER 4600 is listening in port 8082
+Servidor ejecutando en la direccion 8082 y utilizando el balanceador de carga CLUSTER. Id de proceso: 13508
+WORKER 13508 is listening in port 8082
+Servidor ejecutando en la direccion 8082 y utilizando el balanceador de carga CLUSTER. Id de proceso: 12180
+WORKER 12180 is listening in port 8082
+[PRODUCTO] Conectado a MongoDB
+[MENSAJE] Conectado a MongoDB
+[PRODUCTO] Conectado a MongoDB
+[MENSAJE] Conectado a MongoDB
+[PRODUCTO] Conectado a MongoDB
+[MENSAJE] Conectado a MongoDB
+[PRODUCTO] Conectado a MongoDB
+[MENSAJE] Conectado a MongoDB
+[PRODUCTO] Conectado a MongoDB
+[MENSAJE] Conectado a MongoDB
+[PRODUCTO] Conectado a MongoDB
+[MENSAJE] Conectado a MongoDB
+[PRODUCTO] Conectado a MongoDB
+[MENSAJE] Conectado a MongoDB
+[PRODUCTO] Conectado a MongoDB
+[MENSAJE] Conectado a MongoDB

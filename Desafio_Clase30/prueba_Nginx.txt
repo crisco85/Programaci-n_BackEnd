@@ -1,0 +1,102 @@
+crist@DESKTOP-ALNJ555 MINGW64 /c/ngix
+$ ls
+Desafio_Clase30/  contrib/  html/  nginx.exe*   nodeServerII/
+conf/             docs/     logs/  nodeServer/  temp/
+
+crist@DESKTOP-ALNJ555 MINGW64 /c/ngix
+$ cd Desafio_Clase30/
+
+crist@DESKTOP-ALNJ555 MINGW64 /c/ngix/Desafio_Clase30
+$ pm2 start server.js --name="ServerFork8082" --watch -- 8082
+[PM2] Starting C:\ngix\Desafio_Clase30\server.js in fork_mode (1 instance)
+[PM2] Done.
+┌─────┬───────────────────┬─────────────┬─────────┬─────────┬──────────┬────────┬──────┬───────────┬──────────┬──────────┬──────────┬──────────┐
+│ id  │ name              │ namespace   │ version │ mode    │ pid      │ uptime │ ↺    │ status    │ cpu      │ mem      │ user     │ watching │
+├─────┼───────────────────┼─────────────┼─────────┼─────────┼──────────┼────────┼──────┼───────────┼──────────┼──────────┼──────────┼──────────┤
+│ 0   │ ServerFork8082    │ default     │ 1.0.0   │ fork    │ 13848    │ 0s     │ 0    │ online    │ 0%       │ 33.8mb   │ crist    │ enabled  │
+└─────┴───────────────────┴─────────────┴─────────┴─────────┴──────────┴────────┴──────┴───────────┴──────────┴──────────┴──────────┴──────────┘
+
+crist@DESKTOP-ALNJ555 MINGW64 /c/ngix/Desafio_Clase30
+$ pm2 start ./src/server.js --name="ServerCluster8083" --watch -i 2  -- 8083
+[PM2][ERROR] Script not found: C:\ngix\Desafio_Clase30\src\server.js
+
+crist@DESKTOP-ALNJ555 MINGW64 /c/ngix/Desafio_Clase30
+$ pm2 start server.js --name="ServerCluster8083" --watch -i 2 -- 8083
+[PM2] Starting C:\ngix\Desafio_Clase30\server.js in cluster_mode (2 instances)
+[PM2] Done.
+┌─────┬──────────────────────┬─────────────┬─────────┬─────────┬──────────┬────────┬──────┬───────────┬──────────┬──────────┬──────────┬──────────┐
+│ id  │ name                 │ namespace   │ version │ mode    │ pid      │ uptime │ ↺    │ status    │ cpu      │ mem      │ user     │ watching │
+├─────┼──────────────────────┼─────────────┼─────────┼─────────┼──────────┼────────┼──────┼───────────┼──────────┼──────────┼──────────┼──────────┤
+│ 1   │ ServerCluster8083    │ default     │ 1.0.0   │ cluster │ 12152    │ 0s     │ 0    │ online    │ 26.5%    │ 39.1mb   │ crist    │ enabled  │
+│ 2   │ ServerCluster8083    │ default     │ 1.0.0   │ cluster │ 14216    │ 0s     │ 0    │ online    │ 21.8%    │ 36.3mb   │ crist    │ enabled  │
+│ 0   │ ServerFork8082       │ default     │ 1.0.0   │ fork    │ 13848    │ 58s    │ 0    │ online    │ 0%       │ 56.0mb   │ crist    │ enabled  │
+└─────┴──────────────────────┴─────────────┴─────────┴─────────┴──────────┴────────┴──────┴───────────┴──────────┴──────────┴──────────┴──────────┘
+
+crist@DESKTOP-ALNJ555 MINGW64 /c/ngix/Desafio_Clase30
+$ pm2 start server.js --name="ServerCluster8084" --watch -i 2 -- 8084
+[PM2] Starting C:\ngix\Desafio_Clase30\server.js in cluster_mode (2 instances)
+[PM2] Done.
+┌─────┬──────────────────────┬─────────────┬─────────┬─────────┬──────────┬────────┬──────┬───────────┬──────────┬──────────┬──────────┬──────────┐
+│ id  │ name                 │ namespace   │ version │ mode    │ pid      │ uptime │ ↺    │ status    │ cpu      │ mem      │ user     │ watching │
+├─────┼──────────────────────┼─────────────┼─────────┼─────────┼──────────┼────────┼──────┼───────────┼──────────┼──────────┼──────────┼──────────┤
+│ 1   │ ServerCluster8083    │ default     │ 1.0.0   │ cluster │ 12152    │ 25s    │ 0    │ online    │ 0%       │ 56.3mb   │ crist    │ enabled  │
+│ 2   │ ServerCluster8083    │ default     │ 1.0.0   │ cluster │ 14216    │ 25s    │ 0    │ online    │ 0%       │ 55.8mb   │ crist    │ enabled  │
+│ 3   │ ServerCluster8084    │ default     │ 1.0.0   │ cluster │ 756      │ 0s     │ 0    │ online    │ 0%       │ 39.1mb   │ crist    │ enabled  │
+│ 4   │ ServerCluster8084    │ default     │ 1.0.0   │ cluster │ 4408     │ 0s     │ 0    │ online    │ 0%       │ 35.1mb   │ crist    │ enabled  │
+│ 0   │ ServerFork8082       │ default     │ 1.0.0   │ fork    │ 13848    │ 84s    │ 0    │ online    │ 0%       │ 56.5mb   │ crist    │ enabled  │
+└─────┴──────────────────────┴─────────────┴─────────┴─────────┴──────────┴────────┴──────┴───────────┴──────────┴──────────┴──────────┴──────────┘
+
+crist@DESKTOP-ALNJ555 MINGW64 /c/ngix/Desafio_Clase30
+$ pm2 start server.js --name="ServerCluster8085" --watch -i 2 -- 8085
+[PM2] Starting C:\ngix\Desafio_Clase30\server.js in cluster_mode (2 instances)
+[PM2] Done.
+┌─────┬──────────────────────┬─────────────┬─────────┬─────────┬──────────┬────────┬──────┬───────────┬──────────┬──────────┬──────────┬──────────┐
+│ id  │ name                 │ namespace   │ version │ mode    │ pid      │ uptime │ ↺    │ status    │ cpu      │ mem      │ user     │ watching │
+├─────┼──────────────────────┼─────────────┼─────────┼─────────┼──────────┼────────┼──────┼───────────┼──────────┼──────────┼──────────┼──────────┤
+│ 1   │ ServerCluster8083    │ default     │ 1.0.0   │ cluster │ 12152    │ 41s    │ 0    │ online    │ 0%       │ 56.0mb   │ crist    │ enabled  │
+│ 2   │ ServerCluster8083    │ default     │ 1.0.0   │ cluster │ 14216    │ 41s    │ 0    │ online    │ 0%       │ 56.0mb   │ crist    │ enabled  │
+│ 3   │ ServerCluster8084    │ default     │ 1.0.0   │ cluster │ 756      │ 16s    │ 0    │ online    │ 0%       │ 56.4mb   │ crist    │ enabled  │
+│ 4   │ ServerCluster8084    │ default     │ 1.0.0   │ cluster │ 4408     │ 15s    │ 0    │ online    │ 0%       │ 56.5mb   │ crist    │ enabled  │
+│ 5   │ ServerCluster8085    │ default     │ 1.0.0   │ cluster │ 16108    │ 0s     │ 0    │ online    │ 0%       │ 39.7mb   │ crist    │ enabled  │
+│ 6   │ ServerCluster8085    │ default     │ 1.0.0   │ cluster │ 16200    │ 0s     │ 0    │ online    │ 0%       │ 35.5mb   │ crist    │ enabled  │
+│ 0   │ ServerFork8082       │ default     │ 1.0.0   │ fork    │ 13848    │ 99s    │ 0    │ online    │ 0%       │ 56.3mb   │ crist    │ enabled  │
+└─────┴──────────────────────┴─────────────┴─────────┴─────────┴──────────┴────────┴──────┴───────────┴──────────┴──────────┴──────────┴──────────┘
+
+crist@DESKTOP-ALNJ555 MINGW64 /c/ngix/Desafio_Clase30
+$ pm2 list
+┌─────┬──────────────────────┬─────────────┬─────────┬─────────┬──────────┬────────┬──────┬───────────┬──────────┬──────────┬──────────┬──────────┐
+│ id  │ name                 │ namespace   │ version │ mode    │ pid      │ uptime │ ↺    │ status    │ cpu      │ mem      │ user     │ watching │
+├─────┼──────────────────────┼─────────────┼─────────┼─────────┼──────────┼────────┼──────┼───────────┼──────────┼──────────┼──────────┼──────────┤
+│ 1   │ ServerCluster8083    │ default     │ 1.0.0   │ cluster │ 12152    │ 46s    │ 0    │ online    │ 0%       │ 56.8mb   │ crist    │ enabled  │
+│ 2   │ ServerCluster8083    │ default     │ 1.0.0   │ cluster │ 14216    │ 46s    │ 0    │ online    │ 0%       │ 56.5mb   │ crist    │ enabled  │
+│ 3   │ ServerCluster8084    │ default     │ 1.0.0   │ cluster │ 756      │ 21s    │ 0    │ online    │ 0%       │ 56.5mb   │ crist    │ enabled  │
+│ 4   │ ServerCluster8084    │ default     │ 1.0.0   │ cluster │ 4408     │ 21s    │ 0    │ online    │ 0%       │ 56.6mb   │ crist    │ enabled  │
+│ 5   │ ServerCluster8085    │ default     │ 1.0.0   │ cluster │ 16108    │ 6s     │ 0    │ online    │ 0%       │ 76.4mb   │ crist    │ enabled  │
+│ 6   │ ServerCluster8085    │ default     │ 1.0.0   │ cluster │ 16200    │ 5s     │ 0    │ online    │ 0%       │ 76.0mb   │ crist    │ enabled  │
+│ 0   │ ServerFork8082       │ default     │ 1.0.0   │ fork    │ 13848    │ 105s   │ 0    │ online    │ 0%       │ 55.9mb   │ crist    │ enabled  │
+└─────┴──────────────────────┴─────────────┴─────────┴─────────┴──────────┴────────┴──────┴───────────┴──────────┴──────────┴──────────┴──────────┘
+
+crist@DESKTOP-ALNJ555 MINGW64 /c/ngix/Desafio_Clase30
+$ pm2 delete all
+[PM2] Applying action deleteProcessId on app [all](ids: [
+  0, 1, 2, 3,
+  4, 5, 6
+])
+[PM2] [ServerCluster8083](1) ✓
+[PM2] [ServerFork8082](0) ✓
+[PM2] [ServerCluster8084](3) ✓
+[PM2] [ServerCluster8083](2) ✓
+[PM2] [ServerCluster8084](4) ✓
+[PM2] [ServerCluster8085](5) ✓
+[PM2] [ServerCluster8085](6) ✓
+┌─────┬───────────┬─────────────┬─────────┬─────────┬──────────┬────────┬──────┬───────────┬──────────┬──────────┬──────────┬──────────┐
+│ id  │ name      │ namespace   │ version │ mode    │ pid      │ uptime │ ↺    │ status    │ cpu      │ mem      │ user     │ watching │
+└─────┴───────────┴─────────────┴─────────┴─────────┴──────────┴────────┴──────┴───────────┴──────────┴──────────┴──────────┴──────────┘
+
+crist@DESKTOP-ALNJ555 MINGW64 /c/ngix/Desafio_Clase30
+$ pm2 list
+┌─────┬───────────┬─────────────┬─────────┬─────────┬──────────┬────────┬──────┬───────────┬──────────┬──────────┬──────────┬──────────┐
+│ id  │ name      │ namespace   │ version │ mode    │ pid      │ uptime │ ↺    │ status    │ cpu      │ mem      │ user     │ watching │
+└─────┴───────────┴─────────────┴─────────┴─────────┴──────────┴────────┴──────┴───────────┴──────────┴──────────┴──────────┴──────────┘
+
+

@@ -22,6 +22,9 @@ const yargs = require('yargs/yargs');
 const dotenv = require('dotenv');
 const { fork } = require('child_process');
 
+const cluster = require('cluster');
+const numCPUs = require('os').cpus().length;
+
 
 //#region SET EVIRONMENT VARIABLES
 dotenv.config();
@@ -30,10 +33,12 @@ dotenv.config();
 //#region SET SERVER PORT
 const args = yargs(process.argv.slice(2))
     .alias({
-        port: 'p'
+        port: 'p',
+        balancer: 'b'
     })
     .default({
-        port: 8080
+        port: 8080,
+        balancer: 'FORK'
     })
     .argv
 
@@ -42,6 +47,8 @@ let PORT = 8080;
 if (typeof args.port === 'number'){
     PORT = args.port;
 }
+
+const loadBalancer = args.balancer;
 //#endregion
 
 //#region SESSION MIDDLEWARE
@@ -228,7 +235,8 @@ infoRouter.get('', async (req, res) => {
             {name: "memoryUsage", value: process.memoryUsage().rss},
             {name: "path", value: process.path},
             {name: "processId", value: process.pid},
-            {name: "folder", value: process.cwd()}
+            {name: "folder", value: process.cwd()},
+            {name: "systemCores", value: numCPUs}
         ]
         console.log(processInfo);
         return res.render('info', { processInfo });
@@ -258,11 +266,30 @@ app.all('*', (req, res) => {
 });
 
 
-const server = httpServer.listen(PORT, () => {
-    console.log(`Servidor ejecutando en la direccion ${server.address().port}`);
-});
+if (loadBalancer === 'CLUSTER' && cluster.isMaster){
+    
+    console.log(`Nodo MASTER ${process.pid} corriendo`)
+    
+    for( let i = 0; i < numCPUs; i++) {
+        cluster.fork()
+    }
+    
+    cluster.on('exit', (worker, code, signal) => {
+        console.log(`WORKER ${worker.process.pid} finalizado`)
+    })
 
-server.on('error',(error) => {console.log(`Se ha detectado un error. ${error}`)});
+    cluster.on('listening', (worker, address) => {
+        console.log(`WORKER ${worker.process.pid} is listening in port ${address.port}`)
+    })
+
+} else {    
+    const server = httpServer.listen(PORT, () => {
+        console.log(`Servidor ejecutando en la direccion ${server.address().port} y utilizando el balanceador de carga ${loadBalancer}. Id de proceso: ${process.pid}`)
+    })
+    
+    server.on('error', (error) => { console.log(`Se ha detectado un error. ${error}`) }) 
+      
+}  
 //#endregion
 
 //#region SET SOCKET SERVER

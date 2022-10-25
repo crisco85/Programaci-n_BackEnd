@@ -1,0 +1,110 @@
+crist@DESKTOP-ALNJ555 MINGW64 /f/Document/Cristian - Documents/CoderHouse/Programación BackEnd/Desafios/Desafio_Clase30 (Desafio_Clase30)
+$ forever start server.js 8081
+warn:    --minUptime not set. Defaulting to: 1000ms
+warn:    --spinSleepTime not set. Your script will exit if it does not stay up for at least 1000ms
+info:    Forever processing file: server.js
+(node:8004) Warning: Accessing non-existent property 'padLevels' of module exports inside circular dependency
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:8004) Warning: Accessing non-existent property 'padLevels' of module exports inside circular dependency
+
+crist@DESKTOP-ALNJ555 MINGW64 /f/Document/Cristian - Documents/CoderHouse/Programación BackEnd/Desafios/Desafio_Clase30 (Desafio_Clase30)
+$ forever start server.js 8082
+warn:    --minUptime not set. Defaulting to: 1000ms
+warn:    --spinSleepTime not set. Your script will exit if it does not stay up for at least 1000ms
+info:    Forever processing file: server.js
+(node:15076) Warning: Accessing non-existent property 'padLevels' of module exports inside circular dependency
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:15076) Warning: Accessing non-existent property 'padLevels' of module exports inside circular dependency
+
+crist@DESKTOP-ALNJ555 MINGW64 /f/Document/Cristian - Documents/CoderHouse/Programación BackEnd/Desafios/Desafio_Clase30 (Desafio_Clase30)
+$ forever start server.js 8083
+warn:    --minUptime not set. Defaulting to: 1000ms
+warn:    --spinSleepTime not set. Your script will exit if it does not stay up for at least 1000ms
+info:    Forever processing file: server.js
+(node:7164) Warning: Accessing non-existent property 'padLevels' of module exports inside circular dependency
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:7164) Warning: Accessing non-existent property 'padLevels' of module exports inside circular dependency
+
+crist@DESKTOP-ALNJ555 MINGW64 /f/Document/Cristian - Documents/CoderHouse/Programación BackEnd/Desafios/Desafio_Clase30 (Desafio_Clase30)
+$ forever start server.js 8084
+warn:    --minUptime not set. Defaulting to: 1000ms
+warn:    --spinSleepTime not set. Your script will exit if it does not stay up for at least 1000ms
+info:    Forever processing file: server.js
+(node:12944) Warning: Accessing non-existent property 'padLevels' of module exports inside circular dependency
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:12944) Warning: Accessing non-existent property 'padLevels' of module exports inside circular dependency
+
+crist@DESKTOP-ALNJ555 MINGW64 /f/Document/Cristian - Documents/CoderHouse/Programación BackEnd/Desafios/Desafio_Clase30 (Desafio_Clase30)
+$ forever list
+(node:9548) Warning: Accessing non-existent property 'padLevels' of module exports inside circular dependency
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:9548) Warning: Accessing non-existent property 'padLevels' of module exports inside circular dependency
+info:    Forever processes running
+data:        uid  command                            script                                                                                                   forever pid   id logfile
+       uptime
+data:    [0] VSqo "C:\Program Files\nodejs\node.exe" F:\Document\Cristian - Documents\CoderHouse\Programación BackEnd\Desafios\Desafio_Clase30\server.js 8081 8952    548      C:\Users\crist\.forever\VSqo.log 0:0:0:45.139
+data:    [1] 2tVd "C:\Program Files\nodejs\node.exe" F:\Document\Cristian - Documents\CoderHouse\Programación BackEnd\Desafios\Desafio_Clase30\server.js 8082 14960   7816     C:\Users\crist\.forever\2tVd.log 0:0:0:19.544
+data:    [2] z72n "C:\Program Files\nodejs\node.exe" F:\Document\Cristian - Documents\CoderHouse\Programación BackEnd\Desafios\Desafio_Clase30\server.js 8083 13388   6532     C:\Users\crist\.forever\z72n.log 0:0:0:15.911
+data:    [3] n1UM "C:\Program Files\nodejs\node.exe" F:\Document\Cristian - Documents\CoderHouse\Programación BackEnd\Desafios\Desafio_Clase30\server.js 8084 8092    11544    C:\Users\crist\.forever\n1UM.log 0:0:0:5.905
+
+crist@DESKTOP-ALNJ555 MINGW64 /f/Document/Cristian - Documents/CoderHouse/Programación BackEnd/Desafios/Desafio_Clase30 (Desafio_Clase30)
+$ taskkill -f 6532
+ERROR: Invalid argument/option - '6532'.
+Type "TASKKILL /?" for usage.
+
+crist@DESKTOP-ALNJ555 MINGW64 /f/Document/Cristian - Documents/CoderHouse/Programación BackEnd/Desafios/Desafio_Clase30 (Desafio_Clase30)
+$ taskkill -pid 6532 -f                                                                                                                                                                                  
+SUCCESS: The process with PID 6532 has been terminated.
+
+crist@DESKTOP-ALNJ555 MINGW64 /f/Document/Cristian - Documents/CoderHouse/Programación BackEnd/Desafios/Desafio_Clase30 (Desafio_Clase30)
+$ forever list
+(node:740) Warning: Accessing non-existent property 'padLevels' of module exports inside circular dependency
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:740) Warning: Accessing non-existent property 'padLevels' of module exports inside circular dependency
+info:    Forever processes running
+data:        uid  command                            script                                                                                                   forever pid   id logfile
+       uptime
+data:    [0] VSqo "C:\Program Files\nodejs\node.exe" F:\Document\Cristian - Documents\CoderHouse\Programación BackEnd\Desafios\Desafio_Clase30\server.js 8081 8952    548      C:\Users\crist\.forever\VSqo.log 0:0:18:41.13000000000011  
+data:    [1] 2tVd "C:\Program Files\nodejs\node.exe" F:\Document\Cristian - Documents\CoderHouse\Programación BackEnd\Desafios\Desafio_Clase30\server.js 8082 14960   7816     C:\Users\crist\.forever\2tVd.log 0:0:18:15.535000000000082 
+data:    [2] z72n "C:\Program Files\nodejs\node.exe" F:\Document\Cristian - Documents\CoderHouse\Programación BackEnd\Desafios\Desafio_Clase30\server.js 8083 13388   14028    C:\Users\crist\.forever\z72n.log 0:0:0:6.161
+data:    [3] n1UM "C:\Program Files\nodejs\node.exe" F:\Document\Cristian - Documents\CoderHouse\Programación BackEnd\Desafios\Desafio_Clase30\server.js 8084 8092    11544    C:\Users\crist\.forever\n1UM.log 0:0:18:1.9020000000000437 
+
+crist@DESKTOP-ALNJ555 MINGW64 /f/Document/Cristian - Documents/CoderHouse/Programación BackEnd/Desafios/Desafio_Clase30 (Desafio_Clase30)
+$ taskkill -pid 14028 -f
+SUCCESS: The process with PID 14028 has been terminated.
+
+crist@DESKTOP-ALNJ555 MINGW64 /f/Document/Cristian - Documents/CoderHouse/Programación BackEnd/Desafios/Desafio_Clase30 (Desafio_Clase30)
+$ forever list
+(node:9600) Warning: Accessing non-existent property 'padLevels' of module exports inside circular dependency
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:9600) Warning: Accessing non-existent property 'padLevels' of module exports inside circular dependency
+info:    Forever processes running
+data:        uid  command                            script                                                                                                   forever pid   id logfile
+       uptime
+data:    [0] VSqo "C:\Program Files\nodejs\node.exe" F:\Document\Cristian - Documents\CoderHouse\Programación BackEnd\Desafios\Desafio_Clase30\server.js 8081 8952    548      C:\Users\crist\.forever\VSqo.log 0:0:18:58.261999999999944 
+data:    [1] 2tVd "C:\Program Files\nodejs\node.exe" F:\Document\Cristian - Documents\CoderHouse\Programación BackEnd\Desafios\Desafio_Clase30\server.js 8082 14960   7816     C:\Users\crist\.forever\2tVd.log 0:0:18:32.66799999999989  
+data:    [2] z72n "C:\Program Files\nodejs\node.exe" F:\Document\Cristian - Documents\CoderHouse\Programación BackEnd\Desafios\Desafio_Clase30\server.js 8083 13388   8648     C:\Users\crist\.forever\z72n.log 0:0:0:4.874
+data:    [3] n1UM "C:\Program Files\nodejs\node.exe" F:\Document\Cristian - Documents\CoderHouse\Programación BackEnd\Desafios\Desafio_Clase30\server.js 8084 8092    11544    C:\Users\crist\.forever\n1UM.log 0:0:18:19.0329999999999   
+
+crist@DESKTOP-ALNJ555 MINGW64 /f/Document/Cristian - Documents/CoderHouse/Programación BackEnd/Desafios/Desafio_Clase30 (Desafio_Clase30)
+$ forever stopall
+(node:9732) Warning: Accessing non-existent property 'padLevels' of module exports inside circular dependency
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:9732) Warning: Accessing non-existent property 'padLevels' of module exports inside circular dependency
+info:    Forever stopped processes:
+data:        uid  command                            script                                                                                                   forever pid   id logfile
+       uptime
+data:    [0] VSqo "C:\Program Files\nodejs\node.exe" F:\Document\Cristian - Documents\CoderHouse\Programación BackEnd\Desafios\Desafio_Clase30\server.js 8081 8952    548      C:\Users\crist\.forever\VSqo.log 0:0:21:11.823000000000093 
+data:    [1] 2tVd "C:\Program Files\nodejs\node.exe" F:\Document\Cristian - Documents\CoderHouse\Programación BackEnd\Desafios\Desafio_Clase30\server.js 8082 14960   7816     C:\Users\crist\.forever\2tVd.log 0:0:20:46.228000000000065 
+data:    [2] z72n "C:\Program Files\nodejs\node.exe" F:\Document\Cristian - Documents\CoderHouse\Programación BackEnd\Desafios\Desafio_Clase30\server.js 8083 13388   8648     C:\Users\crist\.forever\z72n.log 0:0:2:18.433999999999997  
+data:    [3] n1UM "C:\Program Files\nodejs\node.exe" F:\Document\Cristian - Documents\CoderHouse\Programación BackEnd\Desafios\Desafio_Clase30\server.js 8084 8092    11544    C:\Users\crist\.forever\n1UM.log 0:0:20:32.58899999999994  
+
+crist@DESKTOP-ALNJ555 MINGW64 /f/Document/Cristian - Documents/CoderHouse/Programación BackEnd/Desafios/Desafio_Clase30 (Desafio_Clase30)
+$ forever list
+(node:11480) Warning: Accessing non-existent property 'padLevels' of module exports inside circular dependency
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:11480) Warning: Accessing non-existent property 'padLevels' of module exports inside circular dependency
+info:    No forever processes running
+
+crist@DESKTOP-ALNJ555 MINGW64 /f/Document/Cristian - Documents/CoderHouse/Programación BackEnd/Desafios/Desafio_Clase30 (Desafio_Clase30)
+$

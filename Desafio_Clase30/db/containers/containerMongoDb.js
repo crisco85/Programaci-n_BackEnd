@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 class containerMongoDB {
 
     constructor(collectionName, schema, url){
+        this.name = collectionName.toUpperCase();
         this.collection = mongoose.model(collectionName, schema);
         this.url = url;
         this.mongoConnect();
@@ -15,7 +16,8 @@ class containerMongoDB {
                 useNewUrlParser: true,
                 useUnifiedTopology: true
             })
-            console.log("Conectado a MongoDB")
+            
+            console.log(`[${this.name}] Conectado a MongoDB`);
         }
         catch (error) {
             throw new Error(`Error en conexion a mongoDB ${console.log(error)}`)
