@@ -1,0 +1,31 @@
+<div class="modal-dialog">
+    <div class="modal-content">
+        <% if(message != ''){ %>
+            <div class="alert alert-warning" role="alert">
+                Error al iniciar sesion: <%= message %>
+            </div>
+        <% } %>
+        <div class="modal-header">
+            <img src="https://cdn4.iconfinder.com/data/icons/internet-security-flat-2/32/Internet_Security_entrance_login_log_in_arrow-256.png" alt="logo" height="50">
+            <h2>Iniciar Sesion</h2>
+        </div>
+        <div class="modal-body">
+            <form role='form' method='POST' action='http://localhost:8080/login'>
+                <!-- method='POST' action='http://localhost:8080/api/productos/' -->
+                <div class="form-group">
+                    <label for="title">Usuario</label>
+                    <input type="text" class="form-control" id="userInput" placeholder="Ingrese nombre de usuario" name="user">
+                </div>
+                <div class="form-group">
+                    <label for="price">Contraseña</label>
+                    <input type="password" class="form-control" id="passwordInput" placeholder="Ingrese su contraseña" name="password">
+                </div>
+                <button type="text" class="btn btn-success" id="submitLogin">Login</button>
+            </form>
+            <br>
+            <form action="http://localhost:8080/signup" method="GET" >
+                <button type="text" class="btn btn-info" id="signupButton">Signup</button>
+            </form>
+        </div>
+    </div>
+</div>
