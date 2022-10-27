@@ -264,7 +264,7 @@ logoutRouter.get('', (req, res) => {
 });
 
 infoRouter.get('', async (req, res) => {
-    consoleLogger.info(req.baseUrl, req.method);
+    //consoleLogger.info(req.baseUrl, req.method);
 
     if(req.user){
         const processInfo = [
@@ -277,7 +277,7 @@ infoRouter.get('', async (req, res) => {
             {name: "folder", value: process.cwd()},
             {name: "systemCores", value: numCPUs}
         ]
-        console.log(processInfo);
+        //console.log(processInfo);
         return res.render('info', { processInfo });
     } 
     res.redirect('/login');
