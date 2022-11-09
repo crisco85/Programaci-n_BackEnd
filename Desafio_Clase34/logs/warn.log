@@ -1,0 +1,9 @@
+[2022-10-26T01:15:43.987] [WARN] warning - /favicon.ico GET
+[2022-10-26T01:15:50.649] [WARN] warning - /login/auth POST
+[2022-10-26T01:16:07.503] [WARN] warning - /login/auth POST
+[2022-10-26T01:18:47.255] [WARN] warning - /login/auth POST
+[2022-10-26T01:21:31.068] [WARN] warning - /login/auth POST
+[2022-10-26T01:22:39.481] [WARN] warning - /login/auth POST
+[2022-10-26T01:23:55.489] [WARN] warning - /api/teclado.png GET
+[2022-10-26T01:23:55.813] [WARN] warning - /api/mouse.png GET
+[2022-10-26T01:23:55.841] [WARN] warning - /api/monitor.png GET
