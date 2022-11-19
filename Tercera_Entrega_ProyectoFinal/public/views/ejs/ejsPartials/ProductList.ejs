@@ -1,0 +1,40 @@
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <img src="https://cdn2.iconfinder.com/data/icons/random-set-1/428/Asset_93-128.png" alt="icono-mensaje" height="50">
+            <h2>Listado de Productos</h2>
+        </div>
+        <div class="modal-body">
+            <% if (mData.length> 0) { %>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">Producto</th>
+                            <th scope="col">Precio</th>
+                            <th scope="col">Icono</th>
+                        </tr>
+                    </thead>
+                    <tbody id="productsTableBody">
+                        <% mData.forEach(product=> { %>
+                            <div>
+                                <tr>
+                                    <td>
+                                        <%= product.title %>
+                                    </td>
+                                    <td>
+                                        <%= product.price %>
+                                    </td>
+                                    <td><img src=<%=product.thumbnail %> alt="product image" width="50" height="50"></td>
+                                </tr>
+                            </div>
+                            <% }) %>
+                    </tbody>
+                </table>
+                <% } else {%>
+                    <div class="alert alert-warning" role="alert">
+                        Data NOT FOUND
+                    </div>
+                    <% } %>
+        </div>
+    </div>
+</div>
